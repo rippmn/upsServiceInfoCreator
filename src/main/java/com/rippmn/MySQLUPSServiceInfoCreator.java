@@ -18,7 +18,7 @@ public class MySQLUPSServiceInfoCreator extends MysqlServiceInfoCreator{
 	@Override
 	public boolean accept(Map<String, Object> serviceData) {
 		
-		boolean accept = serviceData.get("label")!= null && serviceData.get("label").equals("user-provided") && serviceData.get("name") != null && ((String)serviceData.get("name")).contains("mysql"); 
+		boolean accept = serviceData.get("label")!= null && serviceData.get("label").equals("user-provided") && serviceData.get("name") != null && ((String)serviceData.get("name")).toLowerCase().contains("mysql"); 
 		return accept || super.accept(serviceData);		
 	}
 

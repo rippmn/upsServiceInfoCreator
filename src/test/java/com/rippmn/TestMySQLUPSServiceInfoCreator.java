@@ -56,5 +56,14 @@ public class TestMySQLUPSServiceInfoCreator {
 		assertTrue("test matches", testCreator.accept(testServiceData));
 		
 	}
+
+	@Test
+	public void testAcceptTrueUpper(){
+		testServiceData.put("label", "user-provided");
+		testServiceData.put("name", "someName-MYSQL-included");
+		assertTrue("test matches", testCreator.accept(testServiceData));
+		
+	}
+
 	
 }
