@@ -8,11 +8,11 @@ A ServiceInfoCreator extension to spring-cloud-cloudfoundry-connector that will 
 * user - database username
 * password - passw0rd of the user with permissions to database
 
-For this to work an additional parameter "ups-type" with a value of "mysql-db"
+For this to work the service name parameter must include "mysql"
 
 For example this cf command to create cups will work
 
 ```
->cf cups mysql-ups -p '{"ups-type":"mysql-db", "host": "mysql01","name": "database",
+>cf cups mysql-ups -p '{"host": "mysql01","name": "database-mysql",
 "password": "passw0rd","port": "3306","user": "db_user"}'
 ```
