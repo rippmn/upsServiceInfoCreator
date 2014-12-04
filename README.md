@@ -13,5 +13,6 @@ For this to work an additional parameter "ups-type" with a value of "mysql-db"
 For example this cf command to create cups will work
 
 ```
->cf cups mysql-ups -p '{"ups-type":"mysql-db", "host": "mysql01","name": "database","password": "passw0rd","port": "3306","user": "db_user"}'
+>cf cups mysql-ups -p '{"ups-type":"mysql-db", "host": "mysql01","name": "database",
+"password": "passw0rd","port": "3306","user": "db_user"}'
 ```
