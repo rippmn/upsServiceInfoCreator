@@ -3,9 +3,6 @@ package com.rippmn;
 import java.util.Map;
 
 import org.springframework.cloud.cloudfoundry.MysqlServiceInfoCreator;
-import org.springframework.cloud.cloudfoundry.RelationalServiceInfoCreator;
-import org.springframework.cloud.cloudfoundry.Tags;
-import org.springframework.cloud.service.common.MysqlServiceInfo;
 
 public class MySQLUPSServiceInfoCreator extends MysqlServiceInfoCreator{
 	
