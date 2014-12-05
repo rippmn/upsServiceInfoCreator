@@ -16,3 +16,12 @@ For example this cf command to create cups will work
 >cf cups mysql-ups -p '{"host": "mysql01","name": "database-mysql",
 "password": "passw0rd","port": "3306","user": "db_user"}'
 ```
+
+**Important Note**
+As of 2014-12-05 the Java buildpack functionality that attempts to "inject" the buildpack configured MySQL JDBC driver for bound services with _"mysql"_ in their name will produce the following behavior:
+- A warning message will be displayed during staging
+```
+[Services]WARN  A service with a name label or tag matching (?-mix:mysql) was found, but was missing one of the required credentials ["uri"]
+```
+- The jdbc driver will not be injected
+To ensure that you application has access to a JDBC driver either through a fork of the build pack, or including it in the deployed artifact. 
