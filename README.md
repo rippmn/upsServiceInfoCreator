@@ -18,6 +18,7 @@ For example this cf command to create cups will work
 ```
 
 **Important Note**
+
 As of 2014-12-05 the Java buildpack functionality that attempts to "inject" the buildpack configured MySQL JDBC driver for bound services with _"mysql"_ in their name will produce the following behavior:
 - A warning message will be displayed during staging
 ```
@@ -25,3 +26,9 @@ As of 2014-12-05 the Java buildpack functionality that attempts to "inject" the 
 ```
 - The jdbc driver will not be injected
 To ensure that you application has access to a JDBC driver either through a fork of the build pack, or including it in the deployed artifact. 
+
+Another, less recommended approach to work around this could be an update of this code to allow for the submission of a empty/false URI in the UPS.  This would then be ignored by overiding appropriate RelationalServiceInfoCreator code.  
+Options:
+- ignore an empty URI and replace with the URI generated from other params
+- destroy URI (perhaps triggered by a specific value like "falseURI") and replace with value generated from other supplied params
+
